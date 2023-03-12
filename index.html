@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>FlipItMoney Hackathon</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://kit.fontawesome.com/ef8b6df795.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/dropdown.css" />
+  <link rel="stylesheet" href="assets/css/readingstyles.css" />
+  <link rel="stylesheet" href="assets/css/scrollstyles.css" />
+  <link rel="icon" type="image/x-icon" href="images/favi.ico" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+</head>
+
+<body class="landing is-preload">
+  <div id="progress_wrapper">
+    <div id="progress"></div>
+  </div>
+
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+
+    <!-- Banner -->
+    <section id="banner">
+      <div class="inner">
+        <h2 class="glowGolden" id="loadshedding">FlipItMoney</h2>
+        <p>
+          <span class="glowSaffron"> A Community </span>
+          <span class="glowTube"> of </span>
+          <span class="glowGreen"> Smart Investors </span>
+        </p>
+        <br />
+        <ul class="actions special"></ul>
+      </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="wrapper style1 special">
+      <div class="inner">
+        <header class="major">
+          <h2>
+            <span class="glow">P</span>
+            <span class="glow">R</span>
+            <span class="glow">O</span>
+            <span class="glow">B</span>
+            <span class="glow">L</span>
+            <span class="glow">E</span>
+            <span class="glow">M</span>
+          </h2>
+          <p class="hiddenScroll">
+            As an employee management system, I need to create a web application with three screens.
+          </p>
+
+          <p class="hiddenScroll">
+            The second screen is a list of all registered employees, each with a picture randomly generated from
+           <i> (https://picsum.photos/) </i>, job-id, name, and bioJoke. The list can be sorted by name, and clicking on an
+            employee's card will lead to the third screen. 
+          </p>
+
+          <p class="hiddenScroll">
+            The first screen is a form that allows users to register new employees by providing job-id, name, address,
+            department, salary, and a bioJoke. The job-id will be auto-generated and must be an alphanumeric string with
+            6 characters. The name field must contain only alphabets, and the salary field must be a number. All fields
+            are required. The bioJoke field will be hidden, and its value will be fetched from an API
+           <i> (https://icanhazdadjoke.com/api) </i> that provides a random joke.
+          </p>
+
+          <p class="hiddenScroll">
+            The third screen shows all details of the selected employee, either as a modal or a pop-up.
+          </p>          
+        </header>
+      </div>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style3 special">
+
+      <div class="inner">
+        <header class="major">
+          <h2 class="typingDemo">Employee Management</h2>
+        </header>
+
+        <form>
+          <label for="job-id">Job-ID:</label>
+          <input type="text" id="job-id" name="job-id" readonly required>
+      
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" pattern="[A-Za-z ]+" required>
+      
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" required>
+      
+          <label for="department">Department:</label>
+          <input type="text" id="department" name="department" required>
+      
+          <label for="bioJoke" style="display:none">BioJoke:</label>
+          <textarea id="bioJoke" name="bioJoke" style="display:none"></textarea>
+      
+          <label for="salary">Salary:</label>
+          <input type="text" id="salary" name="salary" pattern="[0-9]+" required>
+
+          <br>
+      
+          <button type="button" onclick="generateJobID()">Generate Job-ID</button>
+      
+          <button type="submit">Submit</button>
+        </form>
+
+        <table id="employee-table">
+          <thead>
+            <tr>
+              <th>PHOTO</th>
+              <th>JOB ID</th>
+              <th>NAME</th>
+              <th>BIO JOKE</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+        <button type="button" id="sort-button">Sort By Names</button>
+
+      </div>
+    </section>
+
+    <!-- Four -->
+    <section id="four" class="wrapper style3 special">
+      <div class="inner">
+        <header class="major">
+          <h2 class="typingDemo">MY SKILLS</h2>
+        </header>
+        <ul class="features">
+          <li>
+            <h3 class="hiddenScrollTop glow">Undergraduate Coursework</h3>
+            <p class="hiddenScrollDown">
+              Data Structures & Algorithms <br />
+              Object-Oriented Programming <br />
+              Object-Oriented Systems <br />
+              Database Management Systems <br />
+              Mathematics & Statistics
+            </p>
+          </li>
+
+          <li>
+            <h3 class="hiddenScrollTop glow">Libraries and Frameworks</h3>
+            <p class="hiddenScrollDown">
+              Pandas <br />
+              Numpy <br />
+              Matplotlib <br />
+              Seaborn <br />
+              Scikit-Learn <br />
+            </p>
+          </li>
+
+          <li>
+            <h3 class="hiddenScrollTop glow">Languages</h3>
+            <p class="hiddenScrollDown">
+              C <br />
+              C++ <br />
+              Java <br />
+              JavaScript <br />
+              LaTeX <br />
+              Python
+            </p>
+          </li>
+
+          <li>
+            <h3 class="hiddenScrollTop glow">Technologies</h3>
+            <p class="hiddenScrollDown">
+              HTML <br />
+              CSS <br />
+              MATLAB
+            </p>
+          </li>
+
+          <li>
+            <h3 class="hiddenScrollTop glow">Databases</h3>
+            <p class="hiddenScrollDown">
+              MySQL <br />
+              Oracle <br />
+              MSExcel
+            </p>
+          </li>
+
+          <li>
+            <h3 class="hiddenScrollTop glow">Operating Systems</h3>
+            <p class="hiddenScrollDown">
+              Windows
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="outer">
+        <header class="major">
+          <h2 class="typingDemo">Achievements</h2>
+
+          <p class="hiddenScrollTop">
+           Solved <span class="glow">800+</span> Data Structures Problems 
+            on various coding platforms
+          </p>
+          <p class="hiddenScrollDown">
+            <span class="glow">1643</span> Global Rank (out of 21K) in
+            LeetCode Weekly Contest 329
+          </p>
+          <p class="hiddenScrollTop">
+            <span class="glow">97.3</span> Percentile in WBJEE, 2020
+          </p>
+          <p class="hiddenScrollDown">
+            Scored <span class="glow">94.5%</span> in ISC Examination in Science Stream, 2020
+          </p>
+          <p class="hiddenScrollTop">
+            Scored <span class="glow">91.8%</span> in ICSE Examination, 2018
+          </p>
+        </header>
+      </div>
+
+      <p class="CV hiddenScroll glow">
+        <a href="https://drive.google.com/file/d/17dlZh3vLcTko0YJGaKxBld5RXQJGaERZ/view?usp=sharing"
+          target="_blank"><i>
+            <strong>
+              My Curriculum Vitae
+              <i class="fa fa-link" aria-hidden="true"></i></strong></i></a>
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="wrapper style4">
+      <div class="inner">
+        <header>
+          <h2></h2>
+          <p></p>
+        </header>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <h3 class="hiddenScrollTop glowGolden">Connect With Me</h3>
+      <br /><br />
+      <ul class="icons">
+        <li id="wobbleIconOdd">
+          <a href="https://github.com/Krishnaneel" target="_blank" class="icon brands fa-github"><span
+              class="label">GitHub</span></a>
+        </li>
+        <li id="wobbleIconEven">
+          <a href="https://www.linkedin.com/in/krishnaneel-dey/" target="_blank"
+            class="icon brands fa-linkedin"><span class="label">LinkediIn</span></a>
+        </li>
+        <li id="wobbleIconOdd">
+          <a href="mailto: krish.naneel11@gmail.com" target="_blank" class="icon solid fa-envelope"><span
+              class="label">Email</span></a>
+        </li>
+      </ul>
+      <ul class="copyright">
+        <li>&copy; 2023 All rights reserved</li>
+        <li>
+          Designed and Maintained by <a href="#">Krishnaneel Dey</a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/scrollscript.js"></script>
+  <script src="assets/js/readingscript.js"></script>
+  <script src="assets/js/myscript.js"></script>
+</body>
+
+</html>
